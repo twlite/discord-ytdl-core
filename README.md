@@ -50,6 +50,7 @@ client.login("Discord_Bot_Token");
 
 ```
 
+
 - Master
 
 ```js
@@ -87,6 +88,7 @@ client.on("message", msg => {
 client.login("Discord_Bot_Token");
 
 ```
+
 
 # Discord
 **[Click Me](https://discord.gg/AHdaSqr)**
