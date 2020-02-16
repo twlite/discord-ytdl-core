@@ -1,6 +1,12 @@
 # YTDL-DISCORD
 Simple module to create bass-boosted audio for discord bots using ytdl-core.
 
+```
+npm i ytdl-discord
+```
+
+[https://www.npmjs.com/package/ytdl-discord](https://www.npmjs.com/package/ytdl-discord)
+
 # Features
 - Easy
 - Custom FFmpeg args
