@@ -1,0 +1,34 @@
+{
+  "name": "ytdl-discord",
+  "version": "0.0.0",
+  "description": "Simple module to create bass-boosted audio for discord bots using ytdl-core.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/INEX07/ytdl-discord.git"
+  },
+  "keywords": [
+    "ytdl-core",
+    "ytdl-core-discord",
+    "discord.js-bassboost",
+    "bassboost",
+    "discord",
+    "music",
+    "bot",
+    "ytdl-discord",
+    "ytdl-ffmpeg"
+  ],
+  "author": "INEX07",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/INEX07/ytdl-discord/issues"
+  },
+  "homepage": "https://github.com/INEX07/ytdl-discord#readme",
+  "dependencies": {
+    "prism-media": "^1.2.0",
+    "ytdl-core": "^1.0.7"
+  }
+}
