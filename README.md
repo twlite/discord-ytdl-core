@@ -13,7 +13,9 @@ npm i ytdl-discord
 
 # Example
 - Stable
+
 ```js
+
 const ytdl = require("ytdl-discord");
 const Discord = require("discord.js");
 const client = new Discord.Client();
@@ -49,6 +51,7 @@ client.login("Discord_Bot_Token");
 ```
 
 - Master
+
 ```js
 const ytdl = require("ytdl-discord");
 const Discord = require("discord.js");
