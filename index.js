@@ -6,7 +6,7 @@ const prism = require("prism-media");
  * @param {String} url youtube url
  * @param {Object} options ytdl options
  */
-module.exports = (url, options = {}) => {
+function convertStream(url, options) {
     if (!url) throw new Error("No input url provided");
     if (typeof url !== "string") throw new SyntaxError("input URL must be a string");
     let FFmpegArgs = [
@@ -24,3 +24,5 @@ module.exports = (url, options = {}) => {
     let output = inputStream.pipe(transcoder);
     return output;
 }
+
+module.exports = Object.assign(convertStream, ytdl);
