@@ -1,14 +1,14 @@
 {
-  "name": "ytdl-discord",
+  "name": "discord-ytdl-core",
   "version": "0.0.0",
-  "description": "Simple module to create bass-boosted audio for discord bots using ytdl-core.",
+  "description": "Simple module for discord bots with custom ffmpeg args feature.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/INEX07/ytdl-discord.git"
+    "url": "git+https://github.com/INEX07/discord-ytdl-core.git"
   },
   "keywords": [
     "ytdl-core",
@@ -19,16 +19,18 @@
     "music",
     "bot",
     "ytdl-discord",
-    "ytdl-ffmpeg"
+    "ytdl-ffmpeg",
+    "discord-ytdl-core"
   ],
   "author": "INEX07",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/INEX07/ytdl-discord/issues"
+    "url": "https://github.com/INEX07/discord-ytdl-core/issues"
   },
-  "homepage": "https://github.com/INEX07/ytdl-discord#readme",
+  "homepage": "https://github.com/INEX07/discord-ytdl-core#readme",
   "dependencies": {
     "prism-media": "^1.2.0",
     "ytdl-core": "^1.0.7"
-  }
+  },
+  "runkitExampleFilename": "example.js"
 }
