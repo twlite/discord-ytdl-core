@@ -1,11 +1,11 @@
-# YTDL-DISCORD
-Simple module to create bass-boosted audio for discord bots using ytdl-core.
+# discord-ytdl-core
+Simple module for discord bots with custom ffmpeg args feature.
 
 ```
-npm i ytdl-discord
+npm i discord-ytdl-core
 ```
 
-[https://www.npmjs.com/package/ytdl-discord](https://www.npmjs.com/package/ytdl-discord)
+[https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
 
 # Features
 - Easy
@@ -16,7 +16,7 @@ npm i ytdl-discord
 
 ```js
 
-const ytdl = require("ytdl-discord");
+const ytdl = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -54,7 +54,7 @@ client.login("Discord_Bot_Token");
 - Master
 
 ```js
-const ytdl = require("ytdl-discord");
+const ytdl = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
