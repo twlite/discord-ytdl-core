@@ -22,7 +22,13 @@ function convertStream(url, options) {
     });
     let inputStream = ytdl(url, options);
     let output = inputStream.pipe(transcoder);
-    return output;
+    let opus = new prism.opus.Encoder({ rate: 48000, channels: 2, frameSize: 960 });
+    let outputStream = output.pipe(opus);
+    outputStream.on('close', () => {
+        transcoder.destroy();
+        opus.destroy();
+    });
+    return outputStream;
 }
 
 module.exports = Object.assign(convertStream, ytdl);
