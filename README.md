@@ -37,7 +37,7 @@ client.on("message", msg => {
         
         msg.member.voiceChannel.join()
         .then(connection => {
-            connection.playConvertedStream(input,
+            connection.playOpusStream(input,
             {
                 highWaterMark: 1,
                 bitrate: 320000
@@ -77,7 +77,7 @@ client.on("message", msg => {
         .then(connection => {
             connection.play(input,
             {
-                type: 'converted',
+                type: 'opus',
                 highWaterMark: 1,
                 bitrate: 320000
             })
