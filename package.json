@@ -1,6 +1,6 @@
 {
   "name": "discord-ytdl-core",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple module for discord bots with custom ffmpeg args feature.",
   "main": "index.js",
   "scripts": {
@@ -20,7 +20,8 @@
     "bot",
     "ytdl-discord",
     "ytdl-ffmpeg",
-    "discord-ytdl-core"
+    "discord-ytdl-core",
+    "prism-media"
   ],
   "author": "INEX07",
   "license": "ISC",
