@@ -1,4 +1,5 @@
-# discord-ytdl-core
+discord-ytdl-core
+=================
 Simple module for discord bots with custom ffmpeg args feature.
 
 ```
