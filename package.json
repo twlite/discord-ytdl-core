@@ -1,6 +1,6 @@
 {
   "name": "discord-ytdl-core",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Simple module for discord bots with custom ffmpeg args feature.",
   "main": "index.js",
   "scripts": {
