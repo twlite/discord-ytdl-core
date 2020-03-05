@@ -1,5 +1,5 @@
 const ytdl = require("discord-ytdl-core");
-const Discord = require("discord.js");
+const Discord = require("discord.js"); // discord.js v11.5.1
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -14,7 +14,7 @@ client.on("message", msg => {
             filter: "audioonly",
             quality: "highestaudio",
             highWaterMark: 1 << 25,
-            passArgs: ['-af', 'equalizer=f=40:width_type=h:width=50:g=15'] // custom ffmpeg args
+            encoderArgs: ['-af', 'equalizer=f=40:width_type=h:width=50:g=15']
         });
 
         msg.member.voiceChannel.join()
