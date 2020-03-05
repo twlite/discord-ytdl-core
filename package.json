@@ -1,7 +1,7 @@
 {
   "name": "discord-ytdl-core",
-  "version": "1.0.1",
-  "description": "Simple module for discord bots with custom ffmpeg args feature.",
+  "version": "1.0.2",
+  "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -21,7 +21,12 @@
     "ytdl-discord",
     "ytdl-ffmpeg",
     "discord-ytdl-core",
-    "prism-media"
+    "prism-media",
+    "discord-musicbot",
+    "music",
+    "musicbot",
+    "discord.js-encoderargs",
+    "discord.js-voice"
   ],
   "author": "INEX07",
   "license": "ISC",
@@ -30,8 +35,13 @@
   },
   "homepage": "https://github.com/INEX07/discord-ytdl-core#readme",
   "dependencies": {
-    "prism-media": "^1.2.0",
-    "ytdl-core": "^1.0.7"
+    "ffmpeg-static": "^4.0.1",
+    "prism-media": "^1.2.1",
+    "ytdl-core": "^1.0.9"
+  },
+  "devDependencies": {
+    "@discordjs/opus": "^0.1.0",
+    "discord.js": "^11.5.1"
   },
   "runkitExampleFilename": "example.js"
 }
