@@ -16,7 +16,7 @@ function convertStream(url, options) {
         "-ar", "48000",
         "-ac", "2",
     ];
-    if (options && options.passArgs && Array.isArray(options.passArgs)) FFmpegArgs = FFmpegArgs.concat(options.passArgs);
+    if (options && options.encoderArgs && Array.isArray(options.encoderArgs)) FFmpegArgs = FFmpegArgs.concat(options.encoderArgs);
     let transcoder = new prism.FFmpeg({
         args: FFmpegArgs
     });
