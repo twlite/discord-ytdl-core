@@ -12,18 +12,12 @@ client.on("message", msg => {
         if (!msg.member.voiceChannel) return msg.channel.send("You're not in a voice channel?");
         let input = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
             filter: "audioonly",
-            quality: "highestaudio",
-            highWaterMark: 1 << 25,
             encoderArgs: ['-af', 'equalizer=f=40:width_type=h:width=50:g=10']
         });
         
         msg.member.voiceChannel.join()
         .then(connection => {
-            connection.playOpusStream(input,
-            {
-                highWaterMark: 1,
-                bitrate: 320000
-            })
+            connection.playOpusStream(input)
         })
     }
 });
