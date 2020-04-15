@@ -2,7 +2,7 @@
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 
 ```bash
-npm i discord-ytdl-core
+npm i INEX07/discord-ytdl-core
 ```
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
@@ -23,4 +23,4 @@ function playStream(connection) {
 ```
 
 # Discord
-**[Click Me](https://discord.gg/AHdaSqr)**
+**[Click Me](https://discord.gg/5qN9fsF)**
