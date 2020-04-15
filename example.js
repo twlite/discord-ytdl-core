@@ -1,5 +1,5 @@
 const ytdl = require("discord-ytdl-core");
-const Discord = require("discord.js"); // discord.js v11.5.1
+const Discord = require("discord.js");
 const client = new Discord.Client();
 
 client.on("ready", () => {
@@ -22,9 +22,6 @@ client.on("message", msg => {
                         type: "opus"
                     })
             })
-            .on("finish", () => {
-                msg.member.voice.channel.leave();
-            });
     }
 });
 
