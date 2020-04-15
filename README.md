@@ -1,5 +1,6 @@
 # discord-ytdl-core
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
+[v1.0.3]
 
 ```bash
 npm i INEX07/discord-ytdl-core
