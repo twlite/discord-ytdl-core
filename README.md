@@ -3,7 +3,7 @@ Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 [v1.0.3-dev]
 
 ```bash
-npm i INEX07/discord-ytdl-core
+npm i Snowflake107/discord-ytdl-core
 ```
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
