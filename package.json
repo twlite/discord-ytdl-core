@@ -36,7 +36,7 @@
   "homepage": "https://github.com/INEX07/discord-ytdl-core#readme",
   "dependencies": {
     "prism-media": "^1.2.1",
-    "ytdl-core": "^2.1.0"
+    "ytdl-core": "^2.1.1"
   },
   "devDependencies": {
     "@discordjs/opus": "^0.1.0",
