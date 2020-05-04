@@ -1,9 +1,8 @@
 # discord-ytdl-core
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
-[v2.0.0-dev]
 
-```bash
-npm i Snowflake107/discord-ytdl-core
+```sh
+npm i discord-ytdl-core
 ```
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
@@ -35,4 +34,4 @@ client.login("TOKEN");
 ```
 
 # Discord
-**Coming Soon**
+**[Click Here](https://discord.gg/uqB8kxh)** to join our discord server.
