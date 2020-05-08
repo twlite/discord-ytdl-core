@@ -45,6 +45,9 @@ client.on("message", msg => {
 client.login("TOKEN");
 ```
 
+# Other functions
+This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
+
 **Special Thanks to [@Androz2091](https://github.com/Androz2091) for the help in development of this package.**
 
 # Join our Discord Server
