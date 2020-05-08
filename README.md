@@ -11,7 +11,7 @@ npm i discord-ytdl-core
 
 ```js
 const ytdl = require("discord-ytdl-core");
-const client = new (require("discord")).Client();
+const client = new (require("discord.js")).Client();
 
 client.on("ready", () => console.log("Online!"));
 
