@@ -6,7 +6,7 @@ const prism = require("prism-media");
  * @param {String} url youtube url
  * @param {Object} options ytdl options
  */
-function convertStream(url, options) {
+function createOpusStream(url, options) {
     if (!url) throw new Error("No input url provided");
     if (typeof url !== "string") throw new SyntaxError("input URL must be a string");
     let FFmpegArgs = [
@@ -16,6 +16,8 @@ function convertStream(url, options) {
         "-ar", "48000",
         "-ac", "2",
     ];
+    
+    if (options && options.seek && !isNaN(options.seek)) FFmpegArgs.unshift("-ss", options.seek);
     if (options && options.encoderArgs && Array.isArray(options.encoderArgs)) FFmpegArgs = FFmpegArgs.concat(options.encoderArgs);
     let transcoder = new prism.FFmpeg({
         args: FFmpegArgs
@@ -31,4 +33,4 @@ function convertStream(url, options) {
     return outputStream;
 }
 
-module.exports = Object.assign(convertStream, ytdl);
+module.exports = Object.assign(createOpusStream, ytdl);
