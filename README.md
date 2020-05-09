@@ -59,6 +59,9 @@ client.on("message", msg => {
 client.login("TOKEN");
 ```
 
+# Example Bots
+- **[P74Y](https://github.com/Snowflake107/P74Y)**
+
 # Other functions
 This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
 
