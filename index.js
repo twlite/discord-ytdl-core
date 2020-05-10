@@ -1,5 +1,10 @@
 const ytdl = require("ytdl-core");
 const prism = require("prism-media");
+const ytsearch = require("yt-search");
+const ytsr = query =>
+  new Promise((resolve, reject) =>
+    ytsearch(query, (err, r) => (err ? reject(err) : resolve(r)))
+  );
 
 /**
  * ytdl-core
@@ -33,4 +38,11 @@ function createOpusStream(url, options) {
     return outputStream;
 }
 
+async function fetchURL(query) {
+    let data = ytsr(query);
+    let res = data.videos ? (data.videos.length ? data.videos[0].url : null) : null;
+    return res;
+}
+
 module.exports = Object.assign(createOpusStream, ytdl);
+module.exports.fetchURL = fetchURL;
