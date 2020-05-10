@@ -39,7 +39,7 @@ function createOpusStream(url, options) {
 }
 
 async function fetchURL(query) {
-    let data = ytsr(query);
+    let data = await ytsr(query);
     let res = data.videos ? (data.videos.length ? data.videos[0].url : null) : null;
     return res;
 }
