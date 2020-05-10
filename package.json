@@ -37,7 +37,8 @@
   "homepage": "https://github.com/Snowflake107/discord-ytdl-core#readme",
   "dependencies": {
     "prism-media": "^1.2.2",
-    "ytdl-core": "^2.1.2"
+    "ytdl-core": "^2.1.2",
+    "yt-search": "^1.1.2"
   },
   "devDependencies": {
     "@discordjs/opus": "^0.3.2",
