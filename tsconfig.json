@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "declaration": true,
+        "strict": true,
+        "strictNullChecks": false,
+        "esModuleInterop": true
+    },
+    "files": [
+        "index.ts"
+    ]
+}
