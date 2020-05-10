@@ -47,7 +47,5 @@ var createOpusStream = function (url, options) {
     });
     return outputStream;
 };
-module.exports = Object.assign({
-    createOpusStream: createOpusStream,
-    ytdl: ytdl_core_1["default"]
-});
+var DiscordYTDLCore = Object.assign(createOpusStream, ytdl_core_1["default"]);
+module.exports = DiscordYTDLCore;

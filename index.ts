@@ -57,7 +57,7 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     return outputStream;
 };
 
-export = Object.assign({
-    createOpusStream,
-    ytdl
-});
+const DiscordYTDLCore = Object.assign(createOpusStream, ytdl);
+
+export = DiscordYTDLCore;
+
