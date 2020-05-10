@@ -21,17 +21,32 @@ This option is ignored when the supplied parameter type isn't array.
 
 - Other options are the options for **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
 
-# Function fetchURL(query)
+# Functions
+## fetchURL(query)
 This function is async function which returns the youtube video url.
 This function takes a query parameter where we can pass video names to get the url.
 
-Example:
+**Example:**
 
 ```js
 const ytdl = require("discord-ytdl-core");
 
 ytdl.fetchURL("Alan Walker faded").then(url => {
     VoiceConnection.play(ytdl(url), { type: "opus" });
+});
+```
+
+## search(query)
+This function searches the querybon youtube and resolves the data
+such as videos, channels, playlists etc.
+
+**Example:**
+
+```js
+const ytdl = require("discord-ytdl-core");
+
+ytdl.search("Alan Walker").then(data => {
+    console.log(`Found ${data.videos.length} videos.`);
 });
 ```
 
