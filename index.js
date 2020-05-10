@@ -42,7 +42,7 @@ function createOpusStream(url, options) {
  * search - searches youtube
  * @param {String} query - search query 
  */
-async function search(query) {
+async function fetch(query) {
     if (!query) throw new Error("No query provided");
     let res = await ytsr(query);
     return res;
@@ -61,4 +61,4 @@ async function fetchURL(query) {
 
 module.exports = Object.assign(createOpusStream, ytdl);
 module.exports.fetchURL = fetchURL;
-module.exports.search = search;
+module.exports.fetch = fetch;
