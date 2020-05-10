@@ -57,7 +57,7 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     return outputStream;
 };
 
-export = {
+export = Object.assign({
     createOpusStream,
     ytdl
-};
+});

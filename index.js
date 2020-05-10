@@ -47,7 +47,7 @@ var createOpusStream = function (url, options) {
     });
     return outputStream;
 };
-module.exports = {
+module.exports = Object.assign({
     createOpusStream: createOpusStream,
     ytdl: ytdl_core_1["default"]
-};
+});
