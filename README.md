@@ -36,7 +36,7 @@ ytdl.fetchURL("Alan Walker faded").then(url => {
 });
 ```
 
-## search(query)
+## fetch(query)
 This function searches the querybon youtube and resolves the data
 such as videos, channels, playlists etc.
 
@@ -45,7 +45,7 @@ such as videos, channels, playlists etc.
 ```js
 const ytdl = require("discord-ytdl-core");
 
-ytdl.search("Alan Walker").then(data => {
+ytdl.fetch("Alan Walker").then(data => {
     console.log(`Found ${data.videos.length} videos.`);
 });
 ```
