@@ -70,8 +70,8 @@ client.login("TOKEN");
 This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
 
 # Developers
-**[@Snowflake107](https://github.com/Snowflake107)** - Initial (JS)
-**[@Androz2091](https://github.com/Androz2091)** - Rewrite (TS)
+- **[@Snowflake107](https://github.com/Snowflake107)** - Initial (JS)
+- **[@Androz2091](https://github.com/Androz2091)** - Rewrite (TS)
 
 # Join our Official Discord Server
 **[Snowflake Development ❄️](https://discord.gg/uqB8kxh)**
