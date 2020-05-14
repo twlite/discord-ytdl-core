@@ -7,6 +7,13 @@ npm i discord-ytdl-core
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
 
+> Please install an Opus engine & FFmpeg before using this package.
+
+## **Supported Opus Engines:**
+- **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)**
+- **[node-opus](https://npmjs.com/package/node-opus)**
+- ~~**[opusscript](https://npmjs.com/package/opusscript)**~~
+
 # Options
 This package provides 2 extra options excluding ytdl-core options.
 They are: `seek` & `encoderArgs`.
@@ -17,7 +24,7 @@ This option is ignored when the supplied parameter type isn't a number.
 
 - encoderArgs: This parameter takes the Array of FFmpeg arguments.
 Invalid args will throw error and crash the process.
-This option is ignored when the supplied parameter type isn't array.
+This option is ignored when the supplied parameter type isn't array. Invalid FFmpeg args might crash the process.
 
 - Other options are the options for **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
 
@@ -38,10 +45,7 @@ client.on("message", msg => {
         if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
         let stream = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
             filter: "audioonly",
-            encoderArgs: [
-                '-af',
-                'equalizer=f=40:width_type=h:width=50:g=10'
-            ] // FFmpeg args array (optional)
+            encoderArgs: ['-af', 'equalizer=f=40:width_type=h:width=50:g=10'] // FFmpeg args array (optional)
         });
         
         msg.member.voice.channel.join()
@@ -65,7 +69,11 @@ client.login("TOKEN");
 # Other functions
 This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
 
-**Special Thanks to [@Androz2091](https://github.com/Androz2091) for the help in development of this package.**
+# Developers
+**[@Snowflake107](https://github.com/Snowflake107)** - Initial (JS)
+**[@Androz2091](https://github.com/Androz2091)** - Rewrite (TS)
 
-# Join our Discord Server
-**[discord.gg/uqB8kxh](https://discord.gg/uqB8kxh)**
+# Join our Official Discord Server
+**[Snowflake Development ❄️](https://discord.gg/uqB8kxh)**
+**[AndrozDev](https://discord.gg/Qreejcu)**
+
