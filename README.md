@@ -66,14 +66,21 @@ client.login("TOKEN");
 # Example Bots
 - **[P74Y](https://github.com/Snowflake107/P74Y)**
 
+> **If you have a bot which uses this package, create a Pull Request.**
+
+
 # Other functions
 This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
+
+# Related
+- **[ytdl-core-discord](https://npmjs.com/package/ytdl-core-discord)**
+- **[discord-player](https://npmjs.com/discord-player)**
 
 # Developers
 - **[@Snowflake107](https://github.com/Snowflake107)** - Initial (JS)
 - **[@Androz2091](https://github.com/Androz2091)** - Rewrite (TS)
 
 # Join our Official Discord Server
-**[Snowflake Development ❄️](https://discord.gg/uqB8kxh)**
-**[AndrozDev](https://discord.gg/Qreejcu)**
+- **[Snowflake Development ❄️](https://discord.gg/uqB8kxh)**
+- **[AndrozDev](https://discord.gg/Qreejcu)**
 
