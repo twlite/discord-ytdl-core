@@ -11,8 +11,8 @@ npm i discord-ytdl-core
 
 ## **Supported Opus Engines:**
 - **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)** - Best performance
-- **[node-opus](https://npmjs.com/package/node-opus)**
-- ~~**[opusscript](https://npmjs.com/package/opusscript)**~~
+- **[node-opus](https://npmjs.com/package/node-opus)** - Deprecated
+- **[opusscript](https://npmjs.com/package/opusscript)**
 
 # Options
 This package provides 2 extra options excluding ytdl-core options.
