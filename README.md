@@ -10,7 +10,7 @@ npm i discord-ytdl-core
 > Please install an Opus engine & FFmpeg before using this package.
 
 ## **Supported Opus Engines:**
-- **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)**
+- **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)** - Best performance
 - **[node-opus](https://npmjs.com/package/node-opus)**
 - ~~**[opusscript](https://npmjs.com/package/opusscript)**~~
 
