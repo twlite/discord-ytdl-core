@@ -34,7 +34,7 @@
   "bugs": {
     "url": "https://github.com/Snowflake107/discord-ytdl-core/issues"
   },
-  "homepage": "https://github.com/Snowflake107/discord-ytdl-core#readme",
+  "homepage": "https://discord-ytdl-core.netlify.app",
   "dependencies": {
     "prism-media": "^1.2.2",
     "ytdl-core": "^2.1.2"
