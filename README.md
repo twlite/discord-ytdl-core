@@ -19,7 +19,7 @@ This package provides 2 extra options excluding ytdl-core options.
 They are: `seek` & `encoderArgs`.
 - seek: This parameter takes the time in seconds. 
 If this option is provided, it will return the stream from that frame.
-Seek option is provided here because discord.js seek doesn't work in `ogg/opus` & `webm/opus` stream.
+Seek option is provided here because discord.js seek doesn't work for `ogg/opus` & `webm/opus` stream.
 This option is ignored when the supplied parameter type isn't a number.
 
 - encoderArgs: This parameter takes the Array of FFmpeg arguments.
