@@ -1,4 +1,4 @@
-# discord-ytdl-core
+# [discord-ytdl-core](https://discord-ytdl-core.netlify.app "Documentation")
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 
 ```sh
