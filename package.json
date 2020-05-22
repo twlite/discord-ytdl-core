@@ -37,7 +37,7 @@
   "homepage": "https://discord-ytdl-core.netlify.app",
   "dependencies": {
     "prism-media": "^1.2.2",
-    "ytdl-core": "^2.1.3"
+    "ytdl-core": "^2.1.4"
   },
   "devDependencies": {
     "@discordjs/opus": "^0.3.2",
