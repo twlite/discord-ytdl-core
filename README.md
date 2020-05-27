@@ -4,7 +4,7 @@ Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 # Documentation
 **[Discord YTDL Core](https://discord-ytdl-core.netlify.app "Discord YTDL Core documentation site")**
 
-#Installing
+# Installing
 
 ```sh
 npm i discord-ytdl-core
