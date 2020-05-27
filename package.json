@@ -3,6 +3,11 @@
   "version": "3.0.0",
   "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
   "main": "index.js",
+  "types": "index.d.ts",
+  "files": [
+    "index.d.ts",
+    "index.ts"
+  ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
