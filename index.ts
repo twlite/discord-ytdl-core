@@ -7,22 +7,22 @@ interface CreateOpusStreamOptions extends downloadOptions {
 };
 
 /**
- * Create an opus stream for your video with provided encoder args
- * @param url - YouTube URL of the video
- * @param options - YTDL options
- * @param [options.seek] seek - Time in seconds to seek
- * @param [options.encoderArgs] encoderArgs - FFmpeg encoder args
- * @returns {Stream}
- * @example ```js
- * const ytdl = require("discord-ytdl-core");
- * const stream = ytdl("VIDEO_URL", {
- *     seek: 3,
- *     encoderArgs: ["-af", "bass=g=10"]
- * });
- * VoiceConnection.play(stream, {
- *     type: "opus"
- * });```
- */
+  * Create an opus stream for your video with provided encoder args
+  * @param url - YouTube URL of the video
+  * @param options - YTDL options
+  * @param [options.seek] seek - Time in seconds to seek
+  * @param [options.encoderArgs] encoderArgs - FFmpeg encoder args
+  * @returns {Stream}
+  * @example ```js
+  * const ytdl = require("discord-ytdl-core");
+  * const stream = ytdl("VIDEO_URL", {
+  *     seek: 3,
+  *     encoderArgs: ["-af", "bass=g=10"]
+  * });
+  * VoiceConnection.play(stream, {
+  *     type: "opus"
+  * });```
+  */
 const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     if (!url) {
         throw new Error("No input url provided");
