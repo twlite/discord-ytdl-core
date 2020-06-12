@@ -1,6 +1,6 @@
 {
   "name": "discord-ytdl-core",
-  "version": "3.0.0",
+  "version": "3.0.1-dev",
   "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -42,7 +42,7 @@
   "homepage": "https://discord-ytdl-core.netlify.app",
   "dependencies": {
     "prism-media": "^1.2.2",
-    "ytdl-core": "^3.0.0"
+    "ytdl-core": "^3.1.1"
   },
   "devDependencies": {
     "@discordjs/opus": "^0.3.2",
