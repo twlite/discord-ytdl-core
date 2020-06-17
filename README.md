@@ -14,9 +14,9 @@ npm i discord-ytdl-core
 
 > Please install an Opus engine & FFmpeg before using this package.
 
-## **Supported Opus Engines:**
-- **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)** - Best performance
-- **[node-opus](https://npmjs.com/package/node-opus)** - Deprecated
+## **Supported Opus Engines**
+- **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)**
+- **[node-opus](https://npmjs.com/package/node-opus)**
 - **[opusscript](https://npmjs.com/package/opusscript)**
 
 # Options
@@ -46,11 +46,11 @@ client.on("ready", () => {
 
 client.on("message", msg => {
     if (msg.author.bot || !msg.guild) return;
-    if (msg.content === "??play") {
+    if (msg.content === "!play") {
         if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
         let stream = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
             filter: "audioonly",
-            encoderArgs: ['-af', 'equalizer=f=40:width_type=h:width=50:g=10'] // FFmpeg args array (optional)
+            encoderArgs: ['-af', 'bass=g=10,dynaudnorm=f=200'] // Sets Bass Boost
         });
         
         msg.member.voice.channel.join()
@@ -68,14 +68,8 @@ client.on("message", msg => {
 client.login("TOKEN");
 ```
 
-# Example Bots
-- **[P74Y](https://github.com/Snowflake107/P74Y)**
-
-> **If you have a bot which uses this package, create a Pull Request.**
-
-
 # Other functions
-This package can do all the functions of normal **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
+Visit **[ytdl-core](https://npmjs.com/package/ytdl-core)** for other functions.
 
 # Related
 - **[ytdl-core-discord](https://npmjs.com/package/ytdl-core-discord)**
