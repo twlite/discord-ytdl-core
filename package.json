@@ -1,7 +1,7 @@
 {
   "name": "discord-ytdl-core",
-  "version": "3.0.1",
-  "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
+  "version": "4.0.0",
+  "description": "Simple audio streaming node for discord bots based on ytdl & FFmpeg.",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
@@ -9,7 +9,8 @@
     "index.ts"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "cd test && node index.js",
+    "discord": "cd test && node discord.js"
   },
   "repository": {
     "type": "git",
@@ -32,7 +33,8 @@
     "musicbot",
     "discord.js-encoderargs",
     "discord.js-voice",
-    "prism-media-ytdl"
+    "prism-media-ytdl",
+    "lavalink"
   ],
   "author": "Snowflake107",
   "license": "ISC",
@@ -47,6 +49,6 @@
   "devDependencies": {
     "@discordjs/opus": "^0.3.2",
     "discord.js": "^12.0.0",
-    "ffmpeg-static": "^4.0.1"
+    "ffmpeg-static": "^4.2.4"
   }
 }

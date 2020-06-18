@@ -1,29 +1,36 @@
 import ytdl, { downloadOptions } from "ytdl-core";
 import prism from "prism-media";
 
-interface CreateOpusStreamOptions extends downloadOptions {
+/**
+ * Stream Options
+ * @param {Number} seek Time in seconds to seek
+ * @param {Array} encoderArgs Args provided to transcoder
+ * @param {String} fmt Output format.
+ * @param {Boolean} opusEncoded It should return opus encoded stream?
+ */
+interface StreamOptions extends downloadOptions {
     seek?: number;
     encoderArgs?: any[];
+    fmt?: string;
+    opusEncoded?: boolean;
 };
 
 /**
   * Create an opus stream for your video with provided encoder args
   * @param url - YouTube URL of the video
   * @param options - YTDL options
-  * @param [options.seek] seek - Time in seconds to seek
-  * @param [options.encoderArgs] encoderArgs - FFmpeg encoder args
   * @returns {Stream}
-  * @example ```js
-  * const ytdl = require("discord-ytdl-core");
+  * @example const ytdl = require("discord-ytdl-core");
   * const stream = ytdl("VIDEO_URL", {
   *     seek: 3,
-  *     encoderArgs: ["-af", "bass=g=10"]
+  *     encoderArgs: ["-af", "bass=g=10"],
+  *     opusEncoded: true
   * });
   * VoiceConnection.play(stream, {
   *     type: "opus"
-  * });```
+  * });
   */
-const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
+const OpusStream = (url: string, options: StreamOptions) => {
     if (!url) {
         throw new Error("No input url provided");
     }
@@ -34,7 +41,7 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     let FFmpegArgs: string[] = [
         "-analyzeduration", "0",
         "-loglevel", "0",
-        "-f", "s16le",
+        "-f", `${options && options.fmt && typeof (options.fmt) == "string" ? options.fmt : "s16le"}`,
         "-ar", "48000",
         "-ac", "2"
     ];
@@ -53,7 +60,10 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
 
     const inputStream = ytdl(url, options);
     const output = inputStream.pipe(transcoder);
-
+    if (options && !options.opusEncoded) {
+        output.on("close", () => transcoder.destroy());
+        return output;
+    }; 
     const opus = new prism.opus.Encoder({
         rate: 48000,
         channels: 2,
@@ -61,7 +71,6 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     });
 
     const outputStream = output.pipe(opus);
-
     outputStream.on('close', () => {
         transcoder.destroy();
         opus.destroy();
@@ -69,7 +78,6 @@ const createOpusStream = (url: string, options: CreateOpusStreamOptions) => {
     return outputStream;
 };
 
-const DiscordYTDLCore = Object.assign(createOpusStream, ytdl);
+const DiscordYTDLCore = Object.assign(OpusStream, ytdl);
 
 export = DiscordYTDLCore;
-
