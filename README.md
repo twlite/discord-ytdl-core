@@ -22,7 +22,6 @@ npm i discord-ytdl-core
 
 # Options
 This package provides 4 extra options excluding ytdl-core options.
-They are: `seek` & `encoderArgs`.
 - seek: This option takes the time in seconds. 
 If this option is provided, it will return the stream from that frame.
 Seek option is provided here because discord.js seek doesn't work for `ogg/opus` & `webm/opus` stream.
