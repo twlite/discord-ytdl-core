@@ -1,8 +1,8 @@
-# [discord-ytdl-core](https://discord-ytdl-core.netlify.app "Documentation")
+# [discord-ytdl-core](https://ytdl.snowflakedev.xyz "Documentation")
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 
 # Documentation
-**[Discord YTDL Core](https://discord-ytdl-core.netlify.app "Discord YTDL Core documentation site")**
+**[Discord YTDL Core](https://ytdl.snowflakedev.xyz "Discord YTDL Core")**
 
 # Installing
 
@@ -12,7 +12,8 @@ npm i discord-ytdl-core
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
 
-> Please install an Opus engine & FFmpeg before using this package.
+# Opus [optional]
+> Please install opus engine if you want to encode the stream to opus format.
 
 ## **Supported Opus Engines**
 - **[@discordjs/opus](https://npmjs.com/package/@discordjs/opus)**
@@ -20,7 +21,7 @@ npm i discord-ytdl-core
 - **[opusscript](https://npmjs.com/package/opusscript)**
 
 # Options
-This package provides 2 extra options excluding ytdl-core options.
+This package provides 4 extra options excluding ytdl-core options.
 They are: `seek` & `encoderArgs`.
 - seek: This option takes the time in seconds. 
 If this option is provided, it will return the stream from that frame.
@@ -34,10 +35,15 @@ This option is ignored when the supplied parameter type isn't array. Invalid FFm
 - opusEncoded: This option takes a Boolean value. If true, it returns `opus encoded` stream.
   If `fmt` option isn't provided, it returns `converted` stream type of discord.js. Other values returns `unknown` stream if `opusEncoded` is false.
 
-- fmt: Refers to custom stream format. Don't use this option for default value. Even though this option changes the format, 
+- fmt: Forcefully changes the stream format. Don't use this option for default value. Even though this option changes the format, 
   it returns `opus` stream if `opusEncoded` is set to `true`. 
 
 - Other options are the options for **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
+
+# API
+## YTDL.arbitraryStream(source, options)
+This method allows you to play the stream from other sources rather than just `youtube`. Stream source must be a string.
+Example Stream Source: **[https://listen.moe/kpop/opus](https://listen.moe/kpop/opus)**. Options are listed above.
 
 # Example
 ## Playing Opus Encoded Stream
@@ -63,7 +69,7 @@ client.on("message", msg => {
         
         msg.member.voice.channel.join()
         .then(connection => {
-            connection.play(stream, {
+            let dispatcher = connection.play(stream, {
                 type: "opus"
             })
             .on("finish", () => {
@@ -100,7 +106,7 @@ client.on("message", msg => {
         
         msg.member.voice.channel.join()
         .then(connection => {
-            connection.play(stream, {
+            let dispatcher = connection.play(stream, {
                 type: "unknown"
             })
             .on("finish", () => {
@@ -136,7 +142,7 @@ client.on("message", msg => {
         
         msg.member.voice.channel.join()
         .then(connection => {
-            connection.play(stream, {
+            let dispatcher = connection.play(stream, {
                 type: "converted"
             })
             .on("finish", () => {
@@ -165,6 +171,41 @@ let stream = ytdl(url, {
 
 stream.pipe(createWriteStream(__dirname+"/test.mp3"));
 
+```
+
+# Arbitrary Stream
+
+```js
+const ytdl = require("discord-ytdl-core");
+const Discord = require("discord.js");
+const client = new Discord.Client();
+
+client.on("ready", () => {
+    console.log("ready")
+});
+
+client.on("message", msg => {
+    if (msg.author.bot || !msg.guild) return;
+    if (msg.content === "!play") {
+        if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
+        let stream = ytdl.arbitraryStream("https://listen.moe/kpop/opus", {
+            opusEncoded: true,
+            encoderArgs: ['-af', 'bass=g=10,dynaudnorm=f=200']
+        });
+        
+        msg.member.voice.channel.join()
+        .then(connection => {
+            let dispatcher = connection.play(stream, {
+                type: "opus"
+            })
+            .on("finish", () => {
+                msg.guild.me.voice.channel.leave();
+            })
+        });
+    }
+});
+
+client.login("TOKEN");
 ```
 
 # Other functions

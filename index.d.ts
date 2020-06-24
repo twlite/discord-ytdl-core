@@ -7,11 +7,27 @@ import prism from "prism-media";
  * @param {String} fmt Output format.
  * @param {Boolean} opusEncoded It should return opus encoded stream?
  */
-interface StreamOptions extends downloadOptions {
+interface YTDLStreamOptions extends downloadOptions {
     seek?: number;
     encoderArgs?: any[];
     fmt?: string;
     opusEncoded?: boolean;
 }
-declare const DiscordYTDLCore: ((url: string, options: StreamOptions) => prism.opus.Encoder | prism.FFmpeg) & typeof ytdl;
+/**
+ * Stream Options
+ * @param {Number} seek Time in seconds to seek
+ * @param {Array} encoderArgs Args provided to transcoder
+ * @param {String} fmt Output format.
+ * @param {Boolean} opusEncoded It should return opus encoded stream?
+ */
+interface StreamOptions {
+    seek?: number;
+    encoderArgs?: any[];
+    fmt?: string;
+    opusEncoded?: boolean;
+}
+declare const DiscordYTDLCore: {
+    (url: string, options: YTDLStreamOptions): prism.opus.Encoder | prism.FFmpeg;
+    arbitraryStream: (stream: string, options: StreamOptions) => prism.opus.Encoder | prism.FFmpeg;
+} & typeof ytdl;
 export = DiscordYTDLCore;

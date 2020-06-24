@@ -1,17 +1,13 @@
 {
   "name": "discord-ytdl-core",
-  "version": "4.0.0",
-  "description": "Simple audio streaming node for discord bots based on ytdl & FFmpeg.",
+  "version": "4.0.1",
+  "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
   "main": "index.js",
   "types": "index.d.ts",
   "files": [
     "index.d.ts",
     "index.ts"
   ],
-  "scripts": {
-    "test": "cd test && node index.js",
-    "discord": "cd test && node discord.js"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Snowflake107/discord-ytdl-core.git"
@@ -41,14 +37,13 @@
   "bugs": {
     "url": "https://github.com/Snowflake107/discord-ytdl-core/issues"
   },
-  "homepage": "https://discord-ytdl-core.netlify.app",
+  "homepage": "https://ytdl.snowflakedev.xyz",
   "dependencies": {
     "prism-media": "^1.2.2",
     "ytdl-core": "^3.1.1"
   },
   "devDependencies": {
-    "@discordjs/opus": "^0.3.2",
-    "discord.js": "^12.0.0",
+    "node-opus": "^0.3.2",
     "ffmpeg-static": "^4.2.4"
   }
 }
