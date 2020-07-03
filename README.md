@@ -20,6 +20,33 @@ npm i discord-ytdl-core
 - **[node-opus](https://npmjs.com/package/node-opus)**
 - **[opusscript](https://npmjs.com/package/opusscript)**
 
+# API
+## YTDL(youtubeURL, options)
+Similar to ytdl-core but this method allows you to pass custom FFmpeg args in options.
+
+```js
+ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
+    filter: "audioonly",
+    fmt: "mp3",
+    encoderArgs: ['-af', 'bass=g=10']
+}).pipe(fs.createWritestream("bass_boosted.mp3"));
+
+```
+
+## YTDL.arbitraryStream(source, options)
+This method allows you to play the stream from other sources rather than just `youtube`. Stream source must be a string or stream object (internal.Readable | internal.Duplex).
+Through URL: **[https://listen.moe/kpop/opus](https://listen.moe/kpop/opus)**
+Using fs:
+
+```js
+let stream = fs.createReadStream("./music.mp4");
+ytdl.arbitraryStream(stream, {
+    fmt: "mp3",
+    encoderArgs: ["bass=g=5"]
+}).pipe(fs.createWriteStream("./music.mp3"))
+
+```
+
 # Options
 This package provides 4 extra options excluding ytdl-core options.
 - seek: This option takes the time in seconds. 
@@ -38,11 +65,6 @@ This option is ignored when the supplied parameter type isn't array. Invalid FFm
   it returns `opus` stream if `opusEncoded` is set to `true`. 
 
 - Other options are the options for **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
-
-# API
-## YTDL.arbitraryStream(source, options)
-This method allows you to play the stream from other sources rather than just `youtube`. Stream source must be a string.
-Example Stream Source: **[https://listen.moe/kpop/opus](https://listen.moe/kpop/opus)**. Options are listed above.
 
 # Example
 ## Playing Opus Encoded Stream

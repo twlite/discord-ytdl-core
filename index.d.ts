@@ -1,5 +1,7 @@
+/// <reference types="node" />
 import ytdl, { downloadOptions } from "ytdl-core";
 import prism from "prism-media";
+import { Readable, Duplex } from "stream";
 /**
  * Stream Options
  * @param {Number} seek Time in seconds to seek
@@ -28,6 +30,6 @@ interface StreamOptions {
 }
 declare const DiscordYTDLCore: {
     (url: string, options: YTDLStreamOptions): prism.opus.Encoder | prism.FFmpeg;
-    arbitraryStream: (stream: string, options: StreamOptions) => prism.opus.Encoder | prism.FFmpeg;
+    arbitraryStream: (stream: string | Readable | Duplex, options: StreamOptions) => prism.opus.Encoder | prism.FFmpeg;
 } & typeof ytdl;
 export = DiscordYTDLCore;

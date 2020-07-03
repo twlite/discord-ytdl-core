@@ -1,5 +1,6 @@
 import ytdl, { downloadOptions } from "ytdl-core";
 import prism from "prism-media";
+import { Readable, Duplex } from "stream";
 
 /**
  * Stream Options
@@ -93,7 +94,7 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
 
 /**
  * Creates arbitraryStream
- * @param {String} stream Any readable stream source
+ * @param {String|Duplex|Readable} stream Any readable stream source
  * @param {StreamOptions} options Stream options
  * @example const streamSource = "https://listen.moe/kpop/opus";
  * let stream = ytdl.arbitraryStream(streamSource, {
@@ -103,12 +104,14 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
  * 
  * stream.pipe(fs.createWriteStream("kpop.mp3"));
  */
-const arbitraryStream = (stream: string, options: StreamOptions) => {
+const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOptions) => {
     if (!stream) {
         throw new Error("No stream source provided");
     }
 
-    let FFmpegArgs: string[] = [
+    let FFmpegArgs: string[];
+    if (typeof stream === "string") {
+        FFmpegArgs = [
             '-reconnect', '1',
             '-reconnect_streamed', '1',
             '-reconnect_delay_max', '5',
@@ -119,6 +122,15 @@ const arbitraryStream = (stream: string, options: StreamOptions) => {
             "-ar", "48000",
             "-ac", "2"
         ];
+    } else {
+        FFmpegArgs = [
+            "-analyzeduration", "0",
+            "-loglevel", "0",
+            "-f", `${options && options.fmt && typeof (options.fmt) == "string" ? options.fmt : "s16le"}`,
+            "-ar", "48000",
+            "-ac", "2"
+        ];
+    }
 
     if (options && options.seek && !isNaN(options.seek)) {
         FFmpegArgs.unshift("-ss", options.seek.toString());
@@ -131,7 +143,7 @@ const arbitraryStream = (stream: string, options: StreamOptions) => {
     let transcoder = new prism.FFmpeg({
         args: FFmpegArgs
     });
-
+    if (typeof stream !== "string") stream.pipe(transcoder);
     if (options && !options.opusEncoded) {
         transcoder.on("close", () => transcoder.destroy());
         return transcoder;

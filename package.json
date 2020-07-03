@@ -1,6 +1,6 @@
 {
   "name": "discord-ytdl-core",
-  "version": "4.0.2",
+  "version": "4.0.3",
   "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
   "main": "index.js",
   "types": "index.d.ts",
@@ -46,7 +46,7 @@
     "ytdl-core": "^3.1.1"
   },
   "devDependencies": {
-    "node-opus": "^0.3.2",
-    "ffmpeg-static": "^4.2.4"
+    "ffmpeg-static": "^4.2.4",
+    "node-opus": "^0.3.2"
   }
 }
