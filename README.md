@@ -36,6 +36,7 @@ ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
 ## YTDL.arbitraryStream(source, options)
 This method allows you to play the stream from other sources rather than just `youtube`. Stream source must be a string or stream object (internal.Readable | internal.Duplex).
 Through URL: **[https://listen.moe/kpop/opus](https://listen.moe/kpop/opus)**
+
 Using fs:
 
 ```js

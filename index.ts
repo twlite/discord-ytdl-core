@@ -143,7 +143,7 @@ const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOpti
     let transcoder = new prism.FFmpeg({
         args: FFmpegArgs
     });
-    if (typeof stream !== "string") stream.pipe(transcoder);
+    if (typeof stream !== "string") transcoder = stream.pipe(transcoder);
     if (options && !options.opusEncoded) {
         transcoder.on("close", () => transcoder.destroy());
         return transcoder;
