@@ -1,52 +1,52 @@
 {
-  "name": "discord-ytdl-core",
-  "version": "4.0.5",
-  "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
-  "main": "index.js",
-  "types": "index.d.ts",
-  "files": [
-    "index.d.ts",
-    "index.ts"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Snowflake107/discord-ytdl-core.git"
-  },
-  "keywords": [
-    "ytdl-core",
-    "ytdl-core-discord",
-    "discord.js-bassboost",
-    "bassboost",
-    "discord",
-    "music",
-    "bot",
-    "ytdl-discord",
-    "ytdl-ffmpeg",
-    "discord-ytdl-core",
-    "prism-media",
-    "discord-musicbot",
-    "music",
-    "musicbot",
-    "discord.js-encoderargs",
-    "discord.js-voice",
-    "prism-media-ytdl",
-    "lavalink",
-    "discord.js-arbitrary-ffmpeg",
-    "discord-player",
-    "discord-music-player"
-  ],
-  "author": "Snowflake107",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Snowflake107/discord-ytdl-core/issues"
-  },
-  "homepage": "https://ytdl.snowflakedev.xyz",
-  "dependencies": {
-    "prism-media": "^1.2.2",
-    "ytdl-core": "^3.1.2"
-  },
-  "devDependencies": {
-    "ffmpeg-static": "^4.2.4",
-    "node-opus": "^0.3.2"
-  }
+    "name": "discord-ytdl-core",
+    "version": "4.0.6",
+    "description": "Simple ytdl wrapper for discord bots with custom ffmpeg args support.",
+    "main": "index.js",
+    "types": "index.d.ts",
+    "files": [
+        "index.d.ts",
+        "index.ts"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Snowflake107/discord-ytdl-core.git"
+    },
+    "keywords": [
+        "ytdl-core",
+        "ytdl-core-discord",
+        "discord.js-bassboost",
+        "bassboost",
+        "discord",
+        "music",
+        "bot",
+        "ytdl-discord",
+        "ytdl-ffmpeg",
+        "discord-ytdl-core",
+        "prism-media",
+        "discord-musicbot",
+        "music",
+        "musicbot",
+        "discord.js-encoderargs",
+        "discord.js-voice",
+        "prism-media-ytdl",
+        "lavalink",
+        "discord.js-arbitrary-ffmpeg",
+        "discord-player",
+        "discord-music-player"
+    ],
+    "author": "Snowflake107",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Snowflake107/discord-ytdl-core/issues"
+    },
+    "homepage": "https://ytdl.snowflakedev.xyz",
+    "dependencies": {
+        "prism-media": "^1.2.2",
+        "ytdl-core": "^3.2.0"
+    },
+    "devDependencies": {
+        "ffmpeg-static": "^4.2.6",
+        "node-opus": "^0.3.2"
+    }
 }
