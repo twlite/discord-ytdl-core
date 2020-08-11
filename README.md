@@ -50,19 +50,19 @@ ytdl.arbitraryStream(stream, {
 
 # Options
 This package provides 4 extra options excluding ytdl-core options.
-- seek: This option takes the time in seconds. 
+- `seek`: This option takes the time in seconds. 
 If this option is provided, it will return the stream from that frame.
 Seek option is provided here because discord.js seek doesn't work for `ogg/opus` & `webm/opus` stream.
 This option is ignored when the supplied parameter type isn't a number.
 
-- encoderArgs: This option takes the Array of FFmpeg arguments.
+- `encoderArgs`: This option takes the Array of FFmpeg arguments.
 Invalid args will throw error and crash the process.
 This option is ignored when the supplied parameter type isn't array. Invalid FFmpeg args might crash the process.
 
-- opusEncoded: This option takes a Boolean value. If true, it returns `opus encoded` stream.
+- `opusEncoded`: This option takes a Boolean value. If true, it returns `opus encoded` stream.
   If `fmt` option isn't provided, it returns `converted` stream type of discord.js. Other values returns `unknown` stream if `opusEncoded` is false.
 
-- fmt: Forcefully changes the stream format. Don't use this option for default value. Even though this option changes the format, 
+- `fmt`: Forcefully changes the stream format. Don't use this option for default value. Even though this option changes the format, 
   it returns `opus` stream if `opusEncoded` is set to `true`. 
 
 - Other options are the options for **[ytdl-core](https://npmjs.com/package/ytdl-core)**.
