@@ -74,10 +74,11 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
 
     const inputStream = ytdl(url, options);
     const output = inputStream.pipe(transcoder);
+    inputStream.on("error", e => output.destroy(e));
     if (options && !options.opusEncoded) {
         output.on("close", () => transcoder.destroy());
         return output;
-    }; 
+    };
     const opus = new prism.opus.Encoder({
         rate: 48000,
         channels: 2,
@@ -85,6 +86,7 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
     });
 
     const outputStream = output.pipe(opus);
+    output.on("error", e => outputStream.destroy(e));
     outputStream.on('close', () => {
         transcoder.destroy();
         opus.destroy();
@@ -143,7 +145,10 @@ const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOpti
     let transcoder = new prism.FFmpeg({
         args: FFmpegArgs
     });
-    if (typeof stream !== "string") transcoder = stream.pipe(transcoder);
+    if (typeof stream !== "string") {
+        transcoder = stream.pipe(transcoder);
+        stream.on("error", e => transcoder.destroy(e));
+    }
     if (options && !options.opusEncoded) {
         transcoder.on("close", () => transcoder.destroy());
         return transcoder;
@@ -155,6 +160,7 @@ const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOpti
     });
 
     const outputStream = transcoder.pipe(opus);
+    transcoder.on("error", e => outputStream.destroy(e));
     outputStream.on('close', () => {
         transcoder.destroy();
         opus.destroy();
