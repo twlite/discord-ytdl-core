@@ -30,6 +30,14 @@ interface StreamOptions {
     opusEncoded?: boolean;
 };
 
+const forwardEvent = (src: Readable, dest: Readable, event: string | string[]) => {
+    dest.on('newListener', (eventName, listener) => {
+        if ((Array.isArray(event) && event.includes(eventName)) || event == eventName)
+            src.on(eventName, listener)
+    });
+    dest.on('removeListener', (eventName, listener) => src.removeListener(eventName, listener));
+};
+
 /**
   * Create an opus stream for your video with provided encoder args
   * @param url - YouTube URL of the video
@@ -76,6 +84,7 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
     const output = inputStream.pipe(transcoder);
     inputStream.on("error", e => output.destroy(e));
     if (options && !options.opusEncoded) {
+        forwardEvent(inputStream, output, ["info", "progress"]);
         output.on("close", () => transcoder.destroy());
         return output;
     };
@@ -86,6 +95,7 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
     });
 
     const outputStream = output.pipe(opus);
+    forwardEvent(inputStream, outputStream, ["info", "progress"]);
     output.on("error", e => outputStream.destroy(e));
     outputStream.on('close', () => {
         transcoder.destroy();
