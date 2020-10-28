@@ -8,6 +8,9 @@
         "index.d.ts",
         "index.ts"
     ],
+    "scripts": {
+        "test": "cd test && node test.js"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Snowflake107/discord-ytdl-core.git"
@@ -47,7 +50,7 @@
     "homepage": "https://ytdl.snowflakedev.xyz",
     "dependencies": {
         "prism-media": "^1.2.2",
-        "ytdl-core": "^3.3.0"
+        "ytdl-core": "^3.4.2"
     },
     "devDependencies": {
         "ffmpeg-static": "^4.2.6",

@@ -2,6 +2,8 @@ import ytdl, { downloadOptions } from "ytdl-core";
 import { opus as Opus, FFmpeg } from "prism-media";
 import { Readable, Duplex } from "stream";
 
+const evn = ["info", "progress"];
+
 interface YTDLStreamOptions extends downloadOptions {
     seek?: number;
     encoderArgs?: string[];
@@ -61,10 +63,14 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
     const inputStream = ytdl(url, options);
     const output = inputStream.pipe(transcoder);
     if (options && !options.opusEncoded) {
-        inputStream.on("error", () => output.destroy());
+        for (const event of evn) {
+            inputStream.on(event, (...args) => output.emit(event, ...args));
+        }
+        inputStream.on("error", (e) => output.destroy(e));
         output.on("close", () => transcoder.destroy());
         return output;
     };
+
     const opus = new Opus.Encoder({
         rate: 48000,
         channels: 2,
@@ -72,12 +78,17 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
     });
 
     const outputStream = output.pipe(opus);
-    outputStream.on("close", () => {
-        inputStream.on("error", () => {
-            transcoder.destroy();
-            opus.destroy();
-        });
 
+    for (const event of evn) {
+        inputStream.on(event, (...args) => outputStream.emit(event, ...args));
+    }
+
+    inputStream.on("error", (e) => {
+        transcoder.destroy(e);
+        opus.destroy(e);
+    });
+
+    outputStream.on("close", () => {
         transcoder.destroy();
         opus.destroy();
     });
@@ -137,7 +148,7 @@ const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOpti
     });
     if (typeof stream !== "string") {
         transcoder = stream.pipe(transcoder);
-        stream.on("error", () => transcoder.destroy());
+        stream.on("error", (e) => transcoder.destroy(e));
     }
     if (options && !options.opusEncoded) {
         transcoder.on("close", () => transcoder.destroy());
