@@ -22,7 +22,7 @@ npm i discord-ytdl-core
 Similar to ytdl-core but this method allows you to pass custom FFmpeg args in options.
 
 ```js
-ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
+ytdl("https://www.youtube.com/watch?v=QnL5P0tFkwM", {
     filter: "audioonly",
     fmt: "mp3",
     encoderArgs: ['-af', 'bass=g=10']
@@ -80,7 +80,7 @@ client.on("message", msg => {
     if (msg.author.bot || !msg.guild) return;
     if (msg.content === "!play") {
         if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
-        let stream = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
+        let stream = ytdl("https://www.youtube.com/watch?v=QnL5P0tFkwM", {
             filter: "audioonly",
             opusEncoded: true,
             encoderArgs: ['-af', 'bass=g=10,dynaudnorm=f=200']
@@ -116,7 +116,7 @@ client.on("message", msg => {
     if (msg.author.bot || !msg.guild) return;
     if (msg.content === "!play") {
         if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
-        let stream = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
+        let stream = ytdl("https://www.youtube.com/watch?v=QnL5P0tFkwM", {
             filter: "audioonly",
             opusEncoded: false,
             fmt: "mp3",
@@ -153,7 +153,7 @@ client.on("message", msg => {
     if (msg.author.bot || !msg.guild) return;
     if (msg.content === "!play") {
         if (!msg.member.voice.channel) return msg.channel.send("You're not in a voice channel?");
-        let stream = ytdl("https://youtube.com/watch?v=ERu6jh_1gR0", {
+        let stream = ytdl("https://www.youtube.com/watch?v=QnL5P0tFkwM", {
             filter: "audioonly",
             opusEncoded: false,
             encoderArgs: ['-af', 'bass=g=10,dynaudnorm=f=200']
@@ -180,7 +180,7 @@ client.login("TOKEN");
 const ytdl = require("../index.js");
 const { createWriteStream } = require ("fs");
 
-const url = "https://www.youtube.com/watch?v=zrwTYozyzYA";
+const url = "https://www.youtube.com/watch?v=QnL5P0tFkwM";
 
 let stream = ytdl(url, {
     encoderArgs: ["-af", "asetrate=44100*1.25,bass=g=20,dynaudnorm=f=150"],
