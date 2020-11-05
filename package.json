@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Snowflake107/discord-ytdl-core.git"
+        "url": "git+https://github.com/DevSnowflake/discord-ytdl-core.git"
     },
     "keywords": [
         "ytdl-core",
@@ -45,7 +45,7 @@
         "url": "https://paypal.me/devsnowflake"
     },
     "bugs": {
-        "url": "https://github.com/Snowflake107/discord-ytdl-core/issues"
+        "url": "https://github.com/DevSnowflake/discord-ytdl-core/issues"
     },
     "homepage": "https://ytdl.snowflakedev.xyz",
     "dependencies": {
