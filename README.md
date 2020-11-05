@@ -4,7 +4,7 @@ Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 # Installing
 
 ```sh
-npm i discord-ytdl-core
+$ npm i discord-ytdl-core
 ```
 
 [https://www.npmjs.com/package/discord-ytdl-core](https://www.npmjs.com/package/discord-ytdl-core)
@@ -177,7 +177,7 @@ client.login("TOKEN");
 # Downloading the video
 
 ```js
-const ytdl = require("../index.js");
+const ytdl = require("discord-ytdl-core");
 const { createWriteStream } = require ("fs");
 
 const url = "https://www.youtube.com/watch?v=QnL5P0tFkwM";
