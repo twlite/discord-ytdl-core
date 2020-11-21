@@ -3,6 +3,17 @@ Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 
 # Installing
 
+| WARNING: To use `discord-ytdl-core`, you will need to install `ytdl-core` on your own (from v5.x). |
+| --- |
+
+## Install ytdl core
+
+```sh
+$ npm i ytdl-core
+```
+
+## Install discord ytdl core
+
 ```sh
 $ npm i discord-ytdl-core
 ```
@@ -47,6 +58,7 @@ ytdl.arbitraryStream(stream, {
 
 # Options
 This package provides 4 extra options excluding ytdl-core options.
+
 - `seek`: This option takes the time in seconds. 
 If this option is provided, it will return the stream from that frame.
 Seek option is provided here because discord.js seek doesn't work for `ogg/opus` & `webm/opus` stream.
@@ -236,4 +248,3 @@ Check out **[ytdl-core](https://npmjs.com/package/ytdl-core)** for other functio
 
 # Join our Official Discord Server
 - **[Snowflake Studio ❄️](https://discord.gg/uqB8kxh)**
-
