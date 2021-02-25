@@ -165,6 +165,8 @@ const arbitraryStream = (stream: string | Readable | Duplex, options: StreamOpti
 };
 
 StreamDownloader.arbitraryStream = arbitraryStream;
+StreamDownloader.version = require("./package.json").version;
+
 const DiscordYTDLCore = Object.assign(StreamDownloader, ytdl);
 
 export = DiscordYTDLCore;

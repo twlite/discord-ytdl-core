@@ -1,4 +1,5 @@
 node_modules/
 test/
 package-lock.json
+yarn.lock
 index.js

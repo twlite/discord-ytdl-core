@@ -242,6 +242,9 @@ client.login("TOKEN");
 # Other functions
 Check out **[ytdl-core](https://npmjs.com/package/ytdl-core)** for other functions.
 
+# Support me
+[![](https://www.paypalobjects.com/webstatic/icon/pp258.png)](https://paypal.me/devsnowflake)
+
 # Related
 - **[ytdl-core-discord](https://npmjs.com/package/ytdl-core-discord)**
 - **[discord-player](https://npmjs.com/discord-player)**
