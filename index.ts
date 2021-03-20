@@ -80,6 +80,8 @@ const StreamDownloader = (url: string, options: YTDLStreamOptions) => {
 
     const outputStream = output.pipe(opus);
 
+    output.on('error', e => outputStream.emit('error', e));
+
     for (const event of evn) {
         inputStream.on(event, (...args) => outputStream.emit(event, ...args));
     }
