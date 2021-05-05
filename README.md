@@ -2,9 +2,7 @@
 Simple ytdl wrapper for discord bots with custom ffmpeg args support.
 
 # Installing
-
-| WARNING: To use `discord-ytdl-core`, you will need to install `ytdl-core` on your own (from v5.x). |
-| --- |
+> First of all, you need to install `ytdl-core` with `npm install --save ytdl-core`.
 
 ## Install ytdl core
 
@@ -246,6 +244,7 @@ Check out **[ytdl-core](https://npmjs.com/package/ytdl-core)** for other functio
 [![](https://www.paypalobjects.com/webstatic/icon/pp258.png)](https://paypal.me/devsnowflake)
 
 # Related
+- **[youtube-sr](https://npmjs.com/package/youtube-sr)**
 - **[ytdl-core-discord](https://npmjs.com/package/ytdl-core-discord)**
 - **[discord-player](https://npmjs.com/discord-player)**
 
