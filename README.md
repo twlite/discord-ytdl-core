@@ -240,13 +240,10 @@ client.login("TOKEN");
 # Other functions
 Check out **[ytdl-core](https://npmjs.com/package/ytdl-core)** for other functions.
 
-# Support me
+# Sponsor this project
 [![](https://www.paypalobjects.com/webstatic/icon/pp258.png)](https://paypal.me/devsnowflake)
 
 # Related
 - **[youtube-sr](https://npmjs.com/package/youtube-sr)**
 - **[ytdl-core-discord](https://npmjs.com/package/ytdl-core-discord)**
 - **[discord-player](https://npmjs.com/discord-player)**
-
-# Join our Official Discord Server
-- **[Snowflake Studio ❄️](https://discord.gg/uqB8kxh)**
