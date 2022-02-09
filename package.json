@@ -9,7 +9,7 @@
         "index.ts"
     ],
     "scripts": {
-        "test": "cd test && node test.js"
+        "test": "node test/test.js"
     },
     "repository": {
         "type": "git",
