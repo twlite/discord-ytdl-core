@@ -20,6 +20,8 @@ declare module "discord-ytdl-core" {
     const DiscordYTDLCore: {
         (url: string, options: YTDLStreamOptions): Opus.Encoder | FFmpeg;
         arbitraryStream: (stream: string | Readable | Duplex, options: StreamOptions) => Opus.Encoder | FFmpeg;
+        YTDLStreamOptions;
+        StreamOptions;
     } & typeof ytdl;
 
     export = DiscordYTDLCore;
