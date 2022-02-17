@@ -78,7 +78,7 @@ This option is ignored when the supplied parameter type isn't array. Invalid FFm
 ## Playing Opus Encoded Stream
 
 ```js
-const ytdl = require("discord-ytdl-core");
+const { ytdl } = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -114,7 +114,7 @@ client.login("TOKEN");
 ## Unknown Stream
 
 ```js
-const ytdl = require("discord-ytdl-core");
+const { ytdl } = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -151,7 +151,7 @@ client.login("TOKEN");
 ## Converted Stream
 
 ```js
-const ytdl = require("discord-ytdl-core");
+const { ytdl } = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
@@ -187,7 +187,7 @@ client.login("TOKEN");
 # Downloading the video
 
 ```js
-const ytdl = require("discord-ytdl-core");
+const { ytdl } = require("discord-ytdl-core");
 const { createWriteStream } = require ("fs");
 
 const url = "https://www.youtube.com/watch?v=QnL5P0tFkwM";
@@ -205,7 +205,7 @@ stream.pipe(createWriteStream(__dirname+"/test.mp3"));
 # Arbitrary Stream
 
 ```js
-const ytdl = require("discord-ytdl-core");
+const { ytdl } = require("discord-ytdl-core");
 const Discord = require("discord.js");
 const client = new Discord.Client();
 
